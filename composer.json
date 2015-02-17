@@ -1,0 +1,18 @@
+{
+    "name": "wdalmut/frankie-app",
+    "license": "MIT",
+    "require": {
+        "wdalmut/frankie": "*",
+        "jms/serializer": "0.16.*",
+        "symfony/dependency-injection": "~2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4",
+        "phpspec/phpspec": "~2"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    }
+}
