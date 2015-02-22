@@ -18,8 +18,8 @@ AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 $container = new CompositeContainer();
 
 $sfContainer = new DicBuilder();
-$loader = new XmlFileLoader($sfContainer, new FileLocator(__DIR__));
-$loader->load(__DIR__ . '/../configs/services.xml');
+$loader = new XmlFileLoader($sfContainer, new FileLocator(realpath(__DIR__  . '/../')));
+$loader->load(realpath(__DIR__ . '/../configs/services.xml'));
 
 $acclimate = new ContainerAcclimator;
 

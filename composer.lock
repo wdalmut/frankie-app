@@ -1222,11 +1222,17 @@
         },
         {
             "name": "wdalmut/frankie",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
-                "url": "/home/walter/git/middleware",
-                "reference": "e35a70c437ca05a4fd20dd07414fa42e9066eab5"
+                "url": "https://github.com/wdalmut/frankie.git",
+                "reference": "8314c0f16797aef28422b2b788037425ffa4649f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wdalmut/frankie/zipball/8314c0f16797aef28422b2b788037425ffa4649f",
+                "reference": "8314c0f16797aef28422b2b788037425ffa4649f",
+                "shasum": ""
             },
             "require": {
                 "acclimate/container": "~1",
@@ -1249,16 +1255,11 @@
                     "Corley\\Middleware\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Corley\\Middleware\\": "tests/",
-                    "Corley\\Demo\\": "app/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "time": "2015-02-15 17:37:28"
+            "time": "2015-02-21 16:22:01"
         },
         {
             "name": "zendframework/zend-code",
