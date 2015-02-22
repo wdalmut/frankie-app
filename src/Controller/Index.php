@@ -3,6 +3,7 @@ namespace Controller;
 
 use Corley\Middleware\Annotations\Route;
 use Corley\Middleware\Annotations\After;
+use Entity\Test;
 
 /**
  * @After(targetClass="Serializer\Json", targetMethod="serialize")
@@ -14,6 +15,11 @@ class Index
      */
     public function index()
     {
-        return ["HelloWorld" => "World"];
+        $e = new Test();
+        $e->setId(139857);
+        $e->setName("This is the name");
+        $e->setMarkAsRead(true);
+
+        return $e;
     }
 }

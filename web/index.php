@@ -19,7 +19,7 @@ $container = new CompositeContainer();
 
 $sfContainer = new DicBuilder();
 $loader = new XmlFileLoader($sfContainer, new FileLocator(realpath(__DIR__  . '/../')));
-$loader->load(realpath(__DIR__ . '/../configs/services.xml'));
+$loader->load(realpath(__DIR__ . '/../configs/serializer.xml'));
 
 $acclimate = new ContainerAcclimator;
 
@@ -35,8 +35,11 @@ $container->addContainer($acclimate->acclimate($phpdiContainer));
 $request = Request::createFromGlobals();
 $response = new Response();
 
-AppFactory::$DEBUG = false;
+AppFactory::$DEBUG = true;
 AppFactory::$CACHE_FOLDER = __DIR__ . "/../cache";
 $app = AppFactory::createApp(__DIR__.'/../src', $container, $request, $response);
+$app->setErrorHandler(function($rq, $rs, $e) {
+    $rs->setContent($e->getMessage());
+});
 $response = $app->run($request, $response);
 $response->send();
